@@ -34,24 +34,26 @@
   <body>
     <!-- Navbar -->
     <nav id="navbar">
-      <div class="navbar__logo">
-        <!-- <i class="fas fa-bahai"></i> -->
-        <div class="navbar__icon">
-          <a href="#">
-            <img src="./imgs/nav-icon.png" alt="nav icon" />
-          </a>
+      <div class="navbar__wrap">
+        <div class="navbar__logo">
+          <!-- <i class="fas fa-bahai"></i> -->
+          <div class="navbar__icon">
+            <a href="#">
+              <img src="./imgs/nav-icon.png" alt="nav icon" />
+            </a>
+          </div>
         </div>
         <!-- <a href="#">Heewon</a> -->
+        <ul class="navbar__menu">
+          <li class="navbar__menu__item active" data-link="#home">Home</li>
+          <li class="navbar__menu__item" data-link="#about">Skills</li>
+          <li class="navbar__menu__item" data-link="#prortfolio__silider">
+            Portfolio
+          </li>
+          <li class="navbar__menu__item" data-link="#work">Works</li>
+          <li class="navbar__menu__item" data-link="#contact">Contact</li>
+        </ul>
       </div>
-      <ul class="navbar__menu">
-        <li class="navbar__menu__item active" data-link="#home">Home</li>
-        <li class="navbar__menu__item" data-link="#about">Skills</li>
-        <li class="navbar__menu__item" data-link="#prortfolio__silider">
-          Portfolio
-        </li>
-        <li class="navbar__menu__item" data-link="#work">Works</li>
-        <li class="navbar__menu__item" data-link="#contact">Contact</li>
-      </ul>
       <!-- Toggle button -->
       <button class="navbar__toggle-btn">
         <i class="fas fa-bars"></i>
@@ -62,7 +64,7 @@
     <section id="home">
       <div class="home__container">
         <img
-          src="imgs/profile.png"
+          src="imgs/profile.svg"
           alt="Heewon's profile photo"
           class="home__avatar"
         />
@@ -196,7 +198,7 @@
             JavaScript <span class="category__count">3</span>
           </button>
           <button class="category__btn" data-filter="sass">
-            SASS <span class="category__count">3</span>
+            SCSS <span class="category__count">3</span>
           </button>
           <button class="category__btn" data-filter="vue">
             Vue.js <span class="category__count">2</span>
@@ -309,13 +311,13 @@
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper('.mySwiper', {
+      var swiper = new Swiper(".mySwiper", {
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
         },
       });
     </script>

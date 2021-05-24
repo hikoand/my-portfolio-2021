@@ -6,8 +6,6 @@ new WOW().init();
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-  // console.log(window.scrollY);
-  // console.log(`navbar height: ${navbarHeight}`);
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
   } else {
@@ -21,7 +19,6 @@ navbarMenu.addEventListener('click', (event) => {
   console.log(event.target.dataset.link);
   const target = event.target;
   const link = target.dataset.link;
-  //navbar 클릭했을 때 출력 X (link있는 경우에만 수행)
   if (link == null) {
     return;
   }
@@ -45,7 +42,6 @@ homeContact.addEventListener('click', (event) => {
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-  // console.log(1 - window.scrollY / homeHeight); //0,800인 경우 1 - 0 = 1 이 되어 불투명, 400,800인 경우 1 - 0.5 = 0.5
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
@@ -78,7 +74,6 @@ workBtnContainer.addEventListener('click', (e) => {
   //remove selection from the previous and select the new one
   const active = document.querySelector('.category__btn.selected');
   active.classList.remove('selected');
-  // span일 경우 btn을 사용
   const target =
     e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
   target.classList.add('selected');
@@ -87,7 +82,6 @@ workBtnContainer.addEventListener('click', (e) => {
   setTimeout(() => {
     projects.forEach((project) => {
       console.log(project.dataset.type);
-      //전부 다 이거나, 클릭한 필터와 데이터 타입이 매칭되면 보여준다.
       if (filter === '*' || filter === project.dataset.type) {
         project.classList.remove('invisible');
       } else {
@@ -98,33 +92,12 @@ workBtnContainer.addEventListener('click', (e) => {
   }, 300);
 });
 
-// scroll이동, 반복되는 method 추출 (utility function)
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
 
 //counter animation
-
-// $(function () {
-//   $('.flex_box .count').each(function (i) {
-//     $(this)
-//       .prop('Counter', 0)
-//       .animate(
-//         {
-//           Counter: $(this).text(),
-//         },
-//         {
-//           duration: 4000,
-//           easing: 'swing',
-//           step: function (now) {
-//             $(this).text(Math.ceil(now));
-//           },
-//         }
-//       );
-//   });
-// });
-
 $(function () {
   $(window).scroll(function () {
     let scTop = $(this).scrollTop();
@@ -151,7 +124,6 @@ $(function () {
 });
 
 // water animation
-
 $(function () {
   let a = 0;
   $(window).scroll(function () {
